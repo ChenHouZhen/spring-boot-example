@@ -28,6 +28,12 @@ HELP.md
 ### VS Code ###
 .vscode/
 
+springboot-example.iml
+springboot-shiro/mvnw
+springboot-shiro/.mvn
+springboot-shiro/mvnw.cmd
+springboot-shiro/HELP.md
+springboot-shiro/springboot-shiro.iml
 
 
 
