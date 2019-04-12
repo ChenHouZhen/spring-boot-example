@@ -14,7 +14,11 @@
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 
 </project>
