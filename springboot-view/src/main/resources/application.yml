@@ -1,0 +1,25 @@
+server:
+  port: 7070
+  servlet:
+    context-path: /view
+
+
+spring:
+  datasource:
+  #    MySQL ≈‰÷√
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  #    «∞∂À◊ ‘¥
+  resources:
+    static-locations: classpath:/static/,classpath:/views/
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
