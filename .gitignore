@@ -35,6 +35,12 @@ springboot-shiro/mvnw.cmd
 springboot-shiro/HELP.md
 springboot-shiro/springboot-shiro.iml
 
+springboot-view/mvnw
+springboot-view/.mvn
+springboot-view/mvnw.cmd
+springboot-view/HELP.md
+springboot-view/springboot-view.iml
+
 
 
 
