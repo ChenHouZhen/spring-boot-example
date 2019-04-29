@@ -92,5 +92,33 @@
         <!--</dependency>-->
     </dependencies>
 
+    <!--<build>-->
+        <!--&lt;!&ndash; maven不拦截下面格式的文件 &ndash;&gt;-->
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<filtering>true</filtering>-->
+                <!--<excludes>-->
+                    <!--<exclude>**/*.woff</exclude>-->
+                    <!--<exclude>**/*.woff2</exclude>-->
+                    <!--<exclude>**/*.ttf</exclude>-->
+                    <!--<exclude>**/*.xlsx</exclude>-->
+                    <!--<exclude>**/*.xls</exclude>-->
+                <!--</excludes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<filtering>false</filtering>-->
+                <!--<includes>-->
+                    <!--<include>**/*.woff</include>-->
+                    <!--<include>**/*.woff2</include>-->
+                    <!--<include>**/*.ttf</include>-->
+                    <!--<include>**/*.xlsx</include>-->
+                    <!--<include>**/*.xls</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+        <!--</resources>-->
+    <!--</build>-->
+
 
 </project>
