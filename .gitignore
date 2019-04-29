@@ -46,3 +46,7 @@ springboot-view/springboot-view.iml
 springboot-common/.mvn
 springboot-common/target
 springboot-common/springboot-common.iml
+
+springboot-generator/.mvn
+springboot-generator/target
+springboot-generator/springboot-generator.iml

@@ -30,6 +30,10 @@
 
     </div>
 
+    <div id="app2">
+        <button @click="p">ddd</button>
+    </div>
+
 </body>
 
 <script>
@@ -58,8 +62,17 @@
                 });
             }
         }
-    })
+    });
 
+
+    var app2 = new Vue({
+        el:"#app2",
+        methods:{
+            p:function () {
+                console.log(app.result)
+            }
+        }
+    })
 
 
 </script>
