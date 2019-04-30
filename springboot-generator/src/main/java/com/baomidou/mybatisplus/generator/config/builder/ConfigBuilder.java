@@ -256,9 +256,9 @@ public class ConfigBuilder {
         if (StringUtils.isNotEmpty(template.getServiceImpl())) {
             pathInfo.put(ConstVal.SERVICEIMPL_PATH, joinPath(outputDir, packageInfo.get(ConstVal.SERVICEIMPL)));
         }
-        /*if (StringUtils.isNotEmpty(template.getController())) {
-            pathInfo.put(ConstVal.CONTROLLER_PATH, joinPath(outputDir, packageInfo.get(ConstVal.CONTROLLER)));
-        }*/
+//        if (StringUtils.isNotEmpty(template.getController())) {
+//            pathInfo.put(ConstVal.CONTROLLER_PATH, joinPath(outputDir, packageInfo.get(ConstVal.CONTROLLER)));
+//        }
     }
 
     /**
@@ -330,7 +330,7 @@ public class ConfigBuilder {
             if(tbName.startsWith("Tb")){
                 tbName = tbName.substring(2, tbName.length()) ;
             }
-            tableInfo.setEntityName(strategyConfig, tbName);
+            tableInfo.setEntityName(strategyConfig, tbName+ "Entity");
             if (StringUtils.isNotEmpty(globalConfig.getMapperName())) {
                 tableInfo.setMapperName(String.format(globalConfig.getMapperName(), tbName));
             } else {

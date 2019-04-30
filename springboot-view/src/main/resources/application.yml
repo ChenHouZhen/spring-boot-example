@@ -21,5 +21,6 @@ spring:
     static-locations: classpath:/static/,classpath:/views/
 
 mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.chenhz.view.domain
 

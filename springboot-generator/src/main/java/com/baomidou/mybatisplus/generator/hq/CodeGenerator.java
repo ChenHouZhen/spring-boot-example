@@ -63,7 +63,7 @@ public abstract class CodeGenerator {
                 .setGlobalConfig(gc)
                 .setPackageInfo(pc)
                 .setCfg(cfg)
-                .setTemplate(new TemplateConfig().setXml("/templates/mapper.xml"))
+                .setTemplate(new TemplateConfig().setXml("/templates/mappers.xml"))
                 .setTemplateEngine(new FreemarkerTemplateEngine())
                 .execute();
     }
@@ -100,6 +100,7 @@ public abstract class CodeGenerator {
                 // .setFileOverride(true)
                 .setEnableCache(false)
                 .setMapperName("%sMapper")
+                .setControllerName("%sController")
                 .setServiceName("%sService");
 
         return gc;

@@ -2,6 +2,7 @@ package com.baomidou.mybatisplus.generator.hq.view;
 
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.FileOutConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.hq.Application;
 import com.baomidou.mybatisplus.generator.hq.CodeGenerator;
@@ -22,9 +23,21 @@ public class ViewCodeGenerator extends CodeGenerator {
 
     public static void main(String[] args) {
         ViewCodeGenerator viewCodeGenerator = new ViewCodeGenerator(Application.VIEW);
-        viewCodeGenerator.generateByTables("sys_config");
+        viewCodeGenerator.generateByTables("sys_menu");
     }
 
+    @Override
+    public PackageConfig getPackageConfig(Application app) {
+        PackageConfig pc = new PackageConfig();
+        pc.setParent(app.getPath()[0])
+                .setEntity("domain")
+                .setController("controller")
+                .setService("service")
+                .setServiceImpl("service.impl")
+                .setMapper("dao");
+
+        return pc;
+    }
 
     @Override
     public InjectionConfig getInjectionConfig(){
@@ -39,8 +52,8 @@ public class ViewCodeGenerator extends CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/src/main/resources/mappers/view/"
-                        +tableInfo.getEntityName()+ "Mapper.xml";
+                return projectPath + "/src/main/resources/mappers/"
+                        +tableInfo.getEntityName().replace("Entity","")+ "Mapper.xml";
             }
         });
 
