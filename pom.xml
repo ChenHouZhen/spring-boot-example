@@ -12,12 +12,15 @@
     <artifactId>springboot-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-example</name>
+    <packaging>pom</packaging>
     <description>Demo project for Spring Boot</description>
 
     <modules>
         <module>springboot-shiro</module>
         <module>springboot-view</module>
         <module>springboot-common</module>
+        <!--<module>springboot-generator</module>-->
+        <module>springboot-blog</module>
     </modules>
 
     <properties>

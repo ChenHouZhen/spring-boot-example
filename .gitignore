@@ -50,3 +50,7 @@ springboot-common/springboot-common.iml
 springboot-generator/.mvn
 springboot-generator/target
 springboot-generator/springboot-generator.iml
+
+springboot-blog/.mvn
+springboot-blog/target
+springboot-blog/springboot-blog.iml

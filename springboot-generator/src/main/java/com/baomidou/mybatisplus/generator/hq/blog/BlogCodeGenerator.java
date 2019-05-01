@@ -1,8 +1,7 @@
-package com.baomidou.mybatisplus.generator.hq.view;
+package com.baomidou.mybatisplus.generator.hq.blog;
 
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.FileOutConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.hq.Application;
 import com.baomidou.mybatisplus.generator.hq.CodeGenerator;
@@ -10,20 +9,24 @@ import com.baomidou.mybatisplus.generator.hq.CodeGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewCodeGenerator extends CodeGenerator {
+/**
+ * @author CHZ
+ * @create 2019/5/1
+ */
+public class BlogCodeGenerator extends CodeGenerator{
 
-    @Override
-    public Application getApp() {
-        return Application.VIEW;
-    }
-
-    public ViewCodeGenerator(Application app){
+    public BlogCodeGenerator(Application app) {
         super(app);
     }
 
+    @Override
+    public Application getApp() {
+        return Application.BLOG;
+    }
+
     public static void main(String[] args) {
-        ViewCodeGenerator viewCodeGenerator = new ViewCodeGenerator(Application.VIEW);
-        viewCodeGenerator.generateByTables("sys_menu");
+        BlogCodeGenerator blogCodeGenerator = new BlogCodeGenerator(Application.BLOG);
+        blogCodeGenerator.generateByTables("sys_user");
     }
 
     @Override
