@@ -1,5 +1,6 @@
 package com.chenhz.blog.service.impl;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.chenhz.blog.domain.SysUserEntity;
 import com.chenhz.blog.dao.SysUserMapper;
 import com.chenhz.blog.service.SysUserService;
@@ -17,4 +18,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity> implements SysUserService {
 
+    @Override
+    public SysUserEntity queryByUsername(String userName) {
+        return this.selectOne(
+                new EntityWrapper<SysUserEntity>().eq("username",userName)
+        );
+    }
 }

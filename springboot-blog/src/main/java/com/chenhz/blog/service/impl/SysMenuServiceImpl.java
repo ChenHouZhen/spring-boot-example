@@ -1,5 +1,6 @@
 package com.chenhz.blog.service.impl;
 
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.chenhz.blog.domain.SysMenuEntity;
 import com.chenhz.blog.dao.SysMenuMapper;
 import com.chenhz.blog.service.SysMenuService;
