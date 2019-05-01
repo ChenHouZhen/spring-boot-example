@@ -19,7 +19,6 @@
         <kaptcha.version>0.0.9</kaptcha.version>
 		<mysql.version>5.1.38</mysql.version>
 		<druid.version>1.0.28</druid.version>
-		<velocity.version>1.7</velocity.version>
 		<mybatis.typehandlers.jsr.version>1.0.2</mybatis.typehandlers.jsr.version>
 		<mybatisplus.version>2.1.9</mybatisplus.version>
 		<mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
@@ -48,13 +47,6 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>${druid.version}</version>
-		</dependency>
-
-		<!-- 模板引擎 -->
-		<dependency>
-			<artifactId>velocity</artifactId>
-			<groupId>org.apache.velocity</groupId>
-			<version>${velocity.version}</version>
 		</dependency>
 
 		<!--MyBatis组件-->
@@ -94,6 +86,16 @@
 			<artifactId>mybatisplus-spring-boot-starter</artifactId>
 			<version>${mybatisplus.spring.boot.version}</version>
 		</dependency>
+
+		<!--模板引擎-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+		<!--</dependency>-->
 
         <!--验证码-->
         <dependency>
