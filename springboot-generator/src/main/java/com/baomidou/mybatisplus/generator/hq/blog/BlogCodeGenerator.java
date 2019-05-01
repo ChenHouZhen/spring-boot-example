@@ -26,7 +26,7 @@ public class BlogCodeGenerator extends CodeGenerator{
 
     public static void main(String[] args) {
         BlogCodeGenerator blogCodeGenerator = new BlogCodeGenerator(Application.BLOG);
-        blogCodeGenerator.generateByTables("sys_user");
+        blogCodeGenerator.generateByTables("sys_menu");
     }
 
     @Override
