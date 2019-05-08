@@ -21,6 +21,7 @@
         <module>springboot-common</module>
         <!--<module>springboot-generator</module>-->
         <module>springboot-blog</module>
+        <module>springboot-session</module>
     </modules>
 
     <properties>

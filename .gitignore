@@ -54,3 +54,8 @@ springboot-generator/springboot-generator.iml
 springboot-blog/.mvn
 springboot-blog/target
 springboot-blog/springboot-blog.iml
+
+
+springboot-session/.mvn
+springboot-session/target
+springboot-session/springboot-session.iml
