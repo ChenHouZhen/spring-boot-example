@@ -18,6 +18,13 @@ public class DynamicNodeController {
     private DynamicNodeRepository dynamicNodeRepository;
 
 
+    @GetMapping("title")
+    public Iterable<DynamicNode> findByTitle(String title){
+        System.out.println("======================");
+        return dynamicNodeRepository.findByTitle(title);
+    }
+
+
     @GetMapping("/init")
     public Iterable<DynamicNode> init() {
 
@@ -26,7 +33,7 @@ public class DynamicNodeController {
 
 
         Map<String,Object> m1 = new HashMap<>();
-        m1.put("name","小明");
+        m1.put("name","小小");
         m1.put("age",12);
         DynamicNode d1 = new DynamicNode("ChengLongP",m1);
 
