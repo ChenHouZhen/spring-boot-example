@@ -2,7 +2,6 @@ package com.chenhz.session.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
@@ -10,11 +9,10 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 public class SessionConfig {
 
     @Bean
-    public RedisHttpSessionConfiguration redisHttpSessionConfiguration(DefaultCookieSerializer myCookieSerializer,Jackson2JsonRedisSerializer jackson2JsonRedisSerializer) {
+    public RedisHttpSessionConfiguration redisHttpSessionConfiguration(DefaultCookieSerializer myCookieSerializer) {
         RedisHttpSessionConfiguration redisHttpSessionConfiguration = new RedisHttpSessionConfiguration();
         redisHttpSessionConfiguration.setCookieSerializer(myCookieSerializer);
         redisHttpSessionConfiguration.setMaxInactiveIntervalInSeconds(3600);
-        redisHttpSessionConfiguration.setDefaultRedisSerializer(jackson2JsonRedisSerializer);
         return redisHttpSessionConfiguration;
     }
 

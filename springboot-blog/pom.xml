@@ -6,7 +6,7 @@
 		<groupId>com.chenhz</groupId>
 		<artifactId>springboot-example</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 	</parent>
 	<groupId>com.chen</groupId>
 	<artifactId>springboot-blog</artifactId>

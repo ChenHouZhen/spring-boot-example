@@ -6,16 +6,17 @@
         <groupId>com.chenhz</groupId>
         <artifactId>springboot-example</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
     <artifactId>springboot-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-common</name>
-    <description>Demo project for Spring Boot</description>
+    <description>公共模块</description>
 
-    <dependencies>
 
-    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
 
 
 </project>

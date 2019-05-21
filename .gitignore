@@ -59,3 +59,7 @@ springboot-blog/springboot-blog.iml
 springboot-session/.mvn
 springboot-session/target
 springboot-session/springboot-session.iml
+
+springboot-neo4j/.mvn
+springboot-neo4j/target
+springboot-neo4j/springboot-session.iml
