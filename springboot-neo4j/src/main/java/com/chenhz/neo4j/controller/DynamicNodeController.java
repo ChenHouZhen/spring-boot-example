@@ -20,8 +20,13 @@ public class DynamicNodeController {
 
     @GetMapping("title")
     public Iterable<DynamicNode> findByTitle(String title){
-        System.out.println("======================");
         return dynamicNodeRepository.findByTitle(title);
+    }
+
+
+    @GetMapping("sex")
+    public Iterable<DynamicNode> findBySex(Integer sex){
+        return dynamicNodeRepository.listBySex(sex);
     }
 
 
