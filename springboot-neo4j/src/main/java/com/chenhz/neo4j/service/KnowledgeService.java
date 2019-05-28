@@ -1,6 +1,7 @@
 package com.chenhz.neo4j.service;
 
 import com.chenhz.neo4j.domain.Knowledge;
+import com.chenhz.neo4j.domain.Relation;
 import com.chenhz.neo4j.repository.KnowledgeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class KnowledgeService {
     private KnowledgeRepository knowledgeRepository;
 
 
- /*   private Map<String, Object> toD3Format(Collection<Knowledge> knowledges) {
+    private Map<String, Object> toD3Format(Collection<Knowledge> knowledges) {
         List<Map<String, Object>> nodes = new ArrayList<>();
         List<Map<String, Object>> rels = new ArrayList<>();
         int i = 0;
@@ -26,8 +27,8 @@ public class KnowledgeService {
             nodes.add(map("title", knowledge.getTitle(), "label", "Knowledge"));
             int target = i;
             i++;
-            for (Knowledge k : knowledge.getChildren()) {
-                Map<String, Object> actor = map("title", k.getPerson().getName(), "label", "actor");
+            for (Relation r : knowledge.getRelations()) {
+                Map<String, Object> actor = map("title", "", "label", r.getType());
                 int source = nodes.indexOf(actor);
                 if (source == -1) {
                     nodes.add(actor);
@@ -37,7 +38,7 @@ public class KnowledgeService {
             }
         }
         return map("nodes", nodes, "links", rels);
-    }*/
+    }
 
     private Map<String, Object> map(String key1, Object value1, String key2, Object value2) {
         Map<String, Object> result = new HashMap<String, Object>(2);
@@ -46,10 +47,10 @@ public class KnowledgeService {
         return result;
     }
 
-  /*  @Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public Map<String, Object> graph(int limit) {
         Collection<Knowledge> result = knowledgeRepository.graph(limit);
         return toD3Format(result);
-    }*/
+    }
 
 }
