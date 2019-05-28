@@ -20,25 +20,41 @@ public class Knowledge {
 
     private String title;
 
+    @JsonIgnoreProperties("knowledge")
+    @Relationship(type = "ACTED_IN", direction = Relationship.INCOMING)
+    private List<Relation> relations;
+
     public Knowledge(){
-        if (children == null){
-            this.children = new ArrayList<>();
-        }
+//        if (children == null){
+//            this.children = new ArrayList<>();
+//        }
     }
 
     public Knowledge(String title){
-        if (children == null){
-            this.children = new ArrayList<>();
-        }
+//        if (children == null){
+//            this.children = new ArrayList<>();
+//        }
         this.title = title;
     }
 
-    @JsonIgnoreProperties("models")
-    @Relationship(type = "ACTED_IN", direction = Relationship.OUTGOING)
-    private List<Knowledge> children;
+//    @JsonIgnoreProperties("models")
+//    @Relationship(type = "ACTED_IN", direction = Relationship.OUTGOING)
+//    private List<Knowledge> children;
+//
 
+//    public void add(Knowledge k){
+//        this.children.add(k);
+//    }
 
-    public void add(Knowledge k){
-        this.children.add(k);
+    public List<Relation> getRelations() {
+        return this.relations;
     }
+
+    public void addRelation(Relation relation) {
+        if (this.relations == null) {
+            this.relations = new ArrayList<>();
+        }
+        this.relations.add(relation);
+    }
+
 }

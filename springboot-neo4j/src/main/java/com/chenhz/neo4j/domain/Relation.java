@@ -5,9 +5,6 @@ import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.RelationshipEntity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @RelationshipEntity(type = "ACTED_IN")
 public class Relation {
@@ -16,25 +13,24 @@ public class Relation {
     @GeneratedValue
     private Long id;
 
-    private List<String> relations = new ArrayList<>();
-
     private Knowledge pre;
 
     private Knowledge pos;
 
+    private Integer type;
+
     public Relation(){}
 
-    public Relation(Knowledge pre,Knowledge pos){
+    public Relation(Knowledge pre,Knowledge pos,Integer type){
         this.pre = pre;
+        this.type = type;
         this.pos = pos;
     }
 
-    public void addRoleName(String name) {
-        if (this.relations == null) {
-            this.relations = new ArrayList<>();
-        }
-        this.relations.add(name);
+    public Relation(Knowledge pre,Knowledge pos){
+        this.pre = pre;
+        this.type = 1;
+        this.pos = pos;
     }
-
 
 }
