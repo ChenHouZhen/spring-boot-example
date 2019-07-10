@@ -3,7 +3,6 @@ package com.chenhz.common.excel;
 import com.chenhz.common.excel.annotation.ExcelField;
 import com.chenhz.common.exception.RRException;
 import com.chenhz.common.validator.ValidatorUtils;
-import com.google.common.collect.Lists;
 import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -21,10 +20,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class ImportExcel {
     private static Logger log = LoggerFactory.getLogger(ImportExcel.class);
@@ -267,7 +263,7 @@ public class ImportExcel {
      * @param groups 导入分组
      */
     public <E> List<E> getDataList(Class<E> cls, int... groups) throws InstantiationException, IllegalAccessException {
-        List<Object[]> annotationList = Lists.newArrayList();
+        List<Object[]> annotationList = new ArrayList();
         // Get annotation field
         Field[] fs = cls.getDeclaredFields();
         for (Field f : fs) {
@@ -324,8 +320,8 @@ public class ImportExcel {
             };
         });
 
-        List<String> expectHeaderList = Lists.newArrayList();
-        List<String> realHeaderList = Lists.newArrayList();
+        List<String> expectHeaderList = new ArrayList();
+        List<String> realHeaderList = new ArrayList();
         int headerColumn = 0;
         for (Object[] os : annotationList){
 
@@ -349,7 +345,7 @@ public class ImportExcel {
 
         //log.debug("Import column count:"+annotationList.size());
         // Get excel data
-        List<E> dataList = Lists.newArrayList();
+        List<E> dataList = new ArrayList<>();
         //循环获取每一行的数据
         int rownum = this.calcLastDataRowNum();
         for (int i = this.getDataRowNum(); i < rownum; i++) {

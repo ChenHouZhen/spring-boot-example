@@ -3,6 +3,8 @@ package com.chenhz.session.controller;
 import com.chenhz.common.entity.R;
 import com.chenhz.common.entity.User;
 import com.chenhz.session.utils.RedisUtils;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/redis")
+@Api(tags = "Redis 操作接口")
 public class RedisController {
 
 
@@ -22,6 +25,7 @@ public class RedisController {
     private RedisUtils redisUtils;
 
     @PostMapping("/set/o")
+    @ApiOperation(value = "set")
     public R setObject(){
         User u = new User();
         u.setAge(12);
@@ -32,6 +36,7 @@ public class RedisController {
     }
 
     @PostMapping("/map/o")
+    @ApiOperation(value = "map")
     public R mapObject(){
         User u = new User();
         u.setAge(12);

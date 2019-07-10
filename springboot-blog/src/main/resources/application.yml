@@ -6,7 +6,7 @@ server:
 
 spring:
   datasource:
-  #    MySQL 配置
+  #    MySQL
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -31,8 +31,8 @@ mybatis:
 
 
 renren:
-  cluster: false  #集群配置  true集群环境   false单机环境，还需打开pom.xml里的spring-session-data-redis注释
-  globalSessionTimeout: 3600   #单机环境，session过期时间为60分钟
+  cluster: false
+  globalSessionTimeout: 3600
   redis:
-    open: false  #是否开启redis缓存  true开启   false关闭
+    open: false
 

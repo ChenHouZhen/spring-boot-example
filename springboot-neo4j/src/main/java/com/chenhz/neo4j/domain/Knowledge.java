@@ -1,7 +1,7 @@
 package com.chenhz.neo4j.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.google.common.collect.Lists;
 import lombok.Data;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
@@ -19,12 +19,19 @@ public class Knowledge {
     @GeneratedValue
     private Long id;
 
+    // 没找到这个包
+//    @Indexed(indexType = IndexType.FULLTEXT, indexName = "userName")
     private String title;
 
-    @JsonIgnoreProperties("knowledge") // 这行是什么作用?
+
+    //private List<Property> properties;
+
+    //private Property property;
+    @JsonIgnore
+//    @JsonIgnoreProperties("knowledge") // 这行是什么作用?
     // direction = Relationship.UNDIRECTED 为啥没作用
     @Relationship(type = "R_IN")
-    private List<Relation> relations;
+    private List<KnowledgeRelation> relations;
 
 
 /*    @JsonIgnoreProperties("models")
@@ -48,16 +55,16 @@ public class Knowledge {
 
 
     public void addChind(Knowledge k){
-        Relation r = new Relation(this,k);
+        KnowledgeRelation r = new KnowledgeRelation(this,k);
       //  this.children.add(k);
         this.relations.add(r);
     }
 
-//    public List<Relation> getRelations() {
+//    public List<KnowledgeRelation> getRelations() {
 //        return this.relations;
 //    }
 //
-//    public void addRelation(Relation relation) {
+//    public void addRelation(KnowledgeRelation relation) {
 //        if (this.relations == null) {
 //            this.relations = new ArrayList<>();
 //        }

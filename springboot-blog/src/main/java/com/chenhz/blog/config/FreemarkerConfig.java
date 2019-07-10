@@ -9,8 +9,10 @@
 package com.chenhz.blog.config;
 
 import com.chenhz.blog.shiro.ShiroTag;
+import com.chenhz.common.config.SwaggerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import java.util.HashMap;

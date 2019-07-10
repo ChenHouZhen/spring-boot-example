@@ -13,6 +13,11 @@
     <description>Demo project for Spring Boot</description>
 
 
+
+    <properties>
+        <project.lib.path>${project.basedir}/src/main/resources/jar</project.lib.path>
+    </properties>
+
     <dependencies>
         <!-- common 模块-->
         <dependency>
@@ -28,21 +33,26 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.xmind.core</groupId>
+            <artifactId>org.xmind.core</artifactId>
+            <version>3.7.6</version>
+            <scope>system</scope>
+            <systemPath>${project.lib.path}/org.xmind.core_3.7.6.201801311814.jar</systemPath>
+        </dependency>
 
-<!--        <dependency>
+ <!--       <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-neo4j</artifactId>
-        </dependency>-->
+        </dependency>
 
 
-<!--
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j</artifactId>
             <version>3.2.9</version>
             <scope>runtime</scope>
-        </dependency>
--->
+        </dependency>-->
 
 
         <!--嵌入式的Neo4j驱动-->
@@ -70,5 +80,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <!-- 这种方式可以将JAR包引入，还不清楚原因，待研究 -->
+        <resources>
+            <resource>
+                <directory>${project.lib.path}</directory>
+                <targetPath>BOOT-INF/lib/</targetPath>
+                <includes>
+                    <include>*.jar</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

@@ -4,6 +4,8 @@ import com.chenhz.blog.shiro.ShiroUtils;
 import com.chenhz.common.entity.R;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +25,15 @@ import java.io.IOException;
  * @create 2019/5/1
  */
 @RestController
+@Api(tags = "登录中心")
 public class SysLoginController {
 
     @Autowired
     private Producer producer;
 
 
-    @RequestMapping("captcha.jpg")
+    @RequestMapping(value = "captcha.jpg", method = RequestMethod.GET)
+    @ApiOperation(value = "获取验证码")
     public void captcha(HttpServletResponse response)throws IOException {
         response.setHeader("Cache-Control", "no-store, no-cache");
         response.setContentType("image/jpeg");
@@ -50,6 +54,7 @@ public class SysLoginController {
      */
     @ResponseBody
     @RequestMapping(value = "/sys/login", method = RequestMethod.POST)
+    @ApiOperation(value = "登录")
     public R login(String username, String password, String captcha) {
         String kaptcha = ShiroUtils.getKaptcha(Constants.KAPTCHA_SESSION_KEY);
         if(!captcha.equalsIgnoreCase(kaptcha)){
@@ -76,6 +81,7 @@ public class SysLoginController {
     /**
      * 退出
      */
+    @ApiOperation(value = "退出")
     @RequestMapping(value = "logout", method = RequestMethod.GET)
     public String logout() {
         ShiroUtils.logout();

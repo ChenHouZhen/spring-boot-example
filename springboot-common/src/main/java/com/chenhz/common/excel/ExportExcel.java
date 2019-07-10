@@ -50,7 +50,7 @@ public class ExportExcel {
     /**
      * 注解列表（Object[]{ ExcelField, Fields/Method }）
      */
-    List<Object[]> annotationList = Lists.newArrayList();
+    List<Object[]> annotationList = new ArrayList<>();
 
     /**
      * 构造函数
@@ -129,7 +129,7 @@ public class ExportExcel {
             };
         });
         // Initialize
-        List<String> headerList = Lists.newArrayList();
+        List<String> headerList = new ArrayList<>();
         for (Object[] os : annotationList){
             //获取注解title属性值
             String t = ((ExcelField)os[0]).title();
@@ -454,17 +454,17 @@ public class ExportExcel {
 //	 */
 //	public static void main(String[] args) throws Throwable {
 //
-//		List<String> headerList = Lists.newArrayList();
+//		List<String> headerList = new ArrayList();
 //		for (int i = 1; i <= 10; i++) {
 //			headerList.add("表头"+i);
 //		}
 //
-//		List<String> dataRowList = Lists.newArrayList();
+//		List<String> dataRowList = new ArrayList();
 //		for (int i = 1; i <= headerList.size(); i++) {
 //			dataRowList.add("数据"+i);
 //		}
 //
-//		List<List<String>> dataList = Lists.newArrayList();
+//		List<List<String>> dataList = new ArrayList();
 //		for (int i = 1; i <=1000000; i++) {
 //			dataList.add(dataRowList);
 //		}
