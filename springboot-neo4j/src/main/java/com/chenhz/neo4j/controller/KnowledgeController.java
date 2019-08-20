@@ -47,6 +47,11 @@ public class KnowledgeController {
         return knowledgeRepository.children(id);
     }
 
+    @GetMapping("/path")
+    public List<Knowledge> path(@RequestParam String path){
+        return knowledgeRepository.queryKgByPath(path);
+    }
+
 
     @PostMapping("/delete")
     public R deleteAll(){

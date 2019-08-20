@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 
-public interface KnowledgeRepository  extends Neo4jRepository<Knowledge, Long> {
+public interface KnowledgeRepository  extends Neo4jRepository<Knowledge, Long> ,CustomizedKnowledgeRepository{
 
 
     // 注意 ： id 不能 直接用 {id：{id_value}} 或 m.id= id_value

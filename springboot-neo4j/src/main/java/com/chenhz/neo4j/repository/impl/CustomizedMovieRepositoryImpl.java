@@ -1,8 +1,9 @@
 
-package com.chenhz.neo4j.repository;
+package com.chenhz.neo4j.repository.impl;
 
 import com.chenhz.neo4j.domain.Movie;
 import com.chenhz.neo4j.domain.Person;
+import com.chenhz.neo4j.repository.CustomizedMovieRepository;
 import org.neo4j.ogm.model.Result;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;

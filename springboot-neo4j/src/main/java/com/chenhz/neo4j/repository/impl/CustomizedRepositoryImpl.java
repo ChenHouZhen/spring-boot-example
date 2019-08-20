@@ -1,6 +1,7 @@
 
-package com.chenhz.neo4j.repository;
+package com.chenhz.neo4j.repository.impl;
 
+import com.chenhz.neo4j.repository.CustomizedRepository;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 import org.neo4j.ogm.transaction.Transaction;

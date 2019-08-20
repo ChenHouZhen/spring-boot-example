@@ -41,18 +41,18 @@
             <systemPath>${project.lib.path}/org.xmind.core_3.7.6.201801311814.jar</systemPath>
         </dependency>
 
- <!--       <dependency>
+       <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-neo4j</artifactId>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j</artifactId>
-            <version>3.2.9</version>
-            <scope>runtime</scope>
-        </dependency>-->
+        <!--
+               <dependency>
+                   <groupId>org.neo4j</groupId>
+                   <artifactId>neo4j</artifactId>
+                   <version>3.2.9</version>
+                   <scope>runtime</scope>
+               </dependency>-->
 
 
         <!--嵌入式的Neo4j驱动-->
@@ -66,11 +66,11 @@
 
         <!-- neo4j-ogm-bolt-driver是二进制驱动，本文列出了这种高性能的驱动但是没有使用，
         spring-data-neo4j支持多种bolt，http（s）俩种协议操作。默认使用http（s）协议驱动-->
-<!--        <dependency>
+        <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-bolt-driver</artifactId>
             <version>${neo4j-ogm.version}</version>
-        </dependency>-->
+        </dependency>
     </dependencies>
 
     <build>
