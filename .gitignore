@@ -60,6 +60,15 @@ springboot-session/.mvn
 springboot-session/target
 springboot-session/springboot-session.iml
 
+
+springboot-rabbit/springboot-rabbit-ack/target
+springboot-rabbit/springboot-rabbit-ack/springboot-rabbit-ack.iml
+
+springboot-rabbit/springboot-rabbit-exchange/target
+springboot-rabbit/springboot-rabbit-exchange/springboot-rabbit-exchange.iml
+
+
+
 springboot-neo4j/.mvn
 springboot-neo4j/target
 springboot-neo4j/springboot-session.iml
