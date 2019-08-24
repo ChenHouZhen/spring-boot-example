@@ -1,28 +1,25 @@
 package com.chenhz.neo4j.domain;
 
 import com.chenhz.neo4j.pojo.RelationshipTypes;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 import org.neo4j.ogm.annotation.*;
 
-//@Data
+@Getter
+@Setter
 @RelationshipEntity(type = RelationshipTypes.R_IN)
 public class KnowledgeRelation {
 
+    // @GraphId 在 Boot 2.0 后不在支持
     @Id
     @GeneratedValue
     private Long id;
 
-    //为了解决对象中存在双向引用导致的无限递归（infinite recursion）问题
-    // 有这个会报错 StackOverflowError
-//    @JsonBackReference
-//    @JSONField(serialize = false)
-    @StartNode //@StartNode  @EndNode 不加这两个 ，启动会报错：org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'neo4jAuditionBeanFactoryPostProcessor': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [com/zj/dataserver/ApplicationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.neo4j.ogm.session.SessionFactory]: Factory method 'sessionFactory' threw exception; nested exception is org.neo4j.ogm.exception.core.ConfigurationException: Could not load driver class org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver
+    //@StartNode  @EndNode 不加这两个 ，启动会报错：org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'neo4jAuditionBeanFactoryPostProcessor': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [com/zj/dataserver/ApplicationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.neo4j.ogm.session.SessionFactory]: Factory method 'sessionFactory' threw exception; nested exception is org.neo4j.ogm.exception.core.ConfigurationException: Could not load driver class org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver
+
+    @StartNode
     private Knowledge pre;
 
-    @JsonIgnore
-//    @JSONField(serialize = false)
-    @JsonBackReference
     @EndNode
     private Knowledge pos;
 

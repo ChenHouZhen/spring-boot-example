@@ -1,48 +1,53 @@
 package com.chenhz.neo4j.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
+import org.neo4j.ogm.annotation.typeconversion.DateLong;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@Data
-@NodeEntity
+@ToString(exclude = "relations")
+@Getter
+@Setter
+@NodeEntity(label = "Knowledge")
 public class Knowledge {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    // 没找到这个包
-//    @Indexed(indexType = IndexType.FULLTEXT, indexName = "userName")
     private String title;
 
 
-    //private List<Property> properties;
+    /**
+     * 测试，Date 的时间
+     *
+     * 结论：Neo4j 存储 Date 的时间格式不正确，存在时区问题
+     *
+     * 解决办法： 将日期类型转换为时间戳，或者用 @DateString 转换为String
+     *           或者直接存储 Long 类型的时间
+     *
+     */
 
-    //private Property property;
+    @DateLong
+    private Date createTime;
+
+
+    private Long updateTime;
+
     @JsonIgnore
-//    @JsonIgnoreProperties("knowledge") // 这行是什么作用?
-    // direction = Relationship.UNDIRECTED 为啥没作用
     @Relationship(type = "R_IN")
     private List<KnowledgeRelation> relations;
 
-
-/*    @JsonIgnoreProperties("models")
-    @Relationship(type = "ACTED_IN", direction = Relationship.OUTGOING)*/
-    //private List<Knowledge> children;
-
-
     public Knowledge(){
-//        if (children == null){
-//            this.children = new ArrayList<>();
-//        }
         if (relations == null){
             this.relations = new ArrayList<>();
         }
@@ -56,19 +61,8 @@ public class Knowledge {
 
     public void addChind(Knowledge k){
         KnowledgeRelation r = new KnowledgeRelation(this,k);
-      //  this.children.add(k);
         this.relations.add(r);
     }
 
-//    public List<KnowledgeRelation> getRelations() {
-//        return this.relations;
-//    }
-//
-//    public void addRelation(KnowledgeRelation relation) {
-//        if (this.relations == null) {
-//            this.relations = new ArrayList<>();
-//        }
-//        this.relations.add(relation);
-//    }
 
 }

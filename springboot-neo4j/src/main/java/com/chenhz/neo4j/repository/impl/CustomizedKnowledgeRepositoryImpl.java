@@ -9,6 +9,7 @@ import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 import org.neo4j.ogm.transaction.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.transaction.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,8 @@ public class CustomizedKnowledgeRepositoryImpl implements CustomizedKnowledgeRep
 
     @Override
     public List<Knowledge> queryKgByPath(String path) {
-        Session session = sessionFactory.openSession();
+        Session session = SessionFactoryUtils.getSession(sessionFactory);
+        // Session session = sessionFactory.openSession();
         String[] titles = pathToTitle(path);
         int size = titles.length;
 
