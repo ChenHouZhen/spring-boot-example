@@ -52,7 +52,6 @@ public class SysLoginController {
     /**
      * 登录
      */
-    @ResponseBody
     @RequestMapping(value = "/sys/login", method = RequestMethod.POST)
     @ApiOperation(value = "登录")
     public R login(String username, String password, String captcha) {

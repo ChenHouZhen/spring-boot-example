@@ -9,6 +9,7 @@
 package com.chenhz.blog.config;
 
 import com.chenhz.blog.shiro.UserRealm;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -30,8 +31,14 @@ import java.util.Map;
  *
  * @author Mark sunlightcs@gmail.com
  */
+@Slf4j
 @Configuration
 public class ShiroConfig {
+
+    // todo:大写 Boolean 会报错
+
+    @Value("${blog.shiro}")
+    private boolean isOpenShiro;
 
     /**
      * 单机环境，session交给shiro管理
@@ -70,6 +77,7 @@ public class ShiroConfig {
 
     @Bean("shiroFilter")
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
+        log.info(">>>>> 是否开启 Shiro验证：{}",isOpenShiro);
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
         shiroFilter.setLoginUrl("/login.html");
@@ -87,7 +95,8 @@ public class ShiroConfig {
         filterMap.put("/sys/login", "anon");
         filterMap.put("/favicon.ico", "anon");
         filterMap.put("/captcha.jpg", "anon");
-        filterMap.put("/**", "authc");
+
+        filterMap.put("/**", isOpenShiro ? "authc" : "anon");
         shiroFilter.setFilterChainDefinitionMap(filterMap);
 
         return shiroFilter;

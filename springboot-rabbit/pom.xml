@@ -19,6 +19,7 @@
     <modules>
         <module>springboot-rabbit-ack</module>
         <module>springboot-rabbit-exchange</module>
+        <module>springboot-rabbit-multi</module>
     </modules>
 
     <dependencies>

@@ -29,6 +29,8 @@ public class KnowledgeService {
             if (nodes.indexOf(map) == -1){
                 nodes.add(map);
                 i++;
+            }else {
+                target = nodes.indexOf(map);
             }
 
             for (KnowledgeRelation r : knowledge.getRelations()) {
