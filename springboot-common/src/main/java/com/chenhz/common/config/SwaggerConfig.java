@@ -19,6 +19,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Slf4j
 public class SwaggerConfig {
+
+
+    // todo:配置文件传变量
+
     @Bean
     public Docket api() {
         log.info(">>>>> 初始化 swagger <<<<<");

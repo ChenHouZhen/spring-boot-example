@@ -8,9 +8,14 @@
 
 package com.chenhz.blog.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.chenhz.blog.domain.SysMenuEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 系统页面视图
@@ -38,6 +43,11 @@ public class SysPageController {
 	@RequestMapping("main.html")
 	public String main(){
 		return "main";
+	}
+
+	@RequestMapping("upload.html")
+	public String upload(){
+		return "upload";
 	}
 
 	@RequestMapping("404.html")

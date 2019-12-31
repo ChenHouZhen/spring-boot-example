@@ -18,6 +18,9 @@ public interface KnowledgeRepository  extends Neo4jRepository<Knowledge, Long> ,
     @Query("MATCH (m:Knowledge)-[r:R_IN]->(a:Knowledge) RETURN m,r,a LIMIT {limit}")
     Collection<Knowledge> graph(@Param("limit") int limit);
 
+    @Query("MATCH (m:Knowledge)-[r:R_IN*1..2]->(a:Knowledge) WHERE id(m) = {id} RETURN m,r,a")
+    Collection<Knowledge> graph3D(@Param("id") int id,@Param("level") int level);
+
     @Query("MATCH (m:Knowledge)-[r:R_IN]->(a:Knowledge) WHERE id(m) = {id} RETURN a ")
     Collection<Knowledge> children(@Param("id") int id);
 

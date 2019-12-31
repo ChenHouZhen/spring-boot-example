@@ -23,6 +23,7 @@
         <module>springboot-neo4j</module>
         <module>springboot-session</module>
         <module>springboot-rabbit</module>
+        <module>springboot-quartz</module>
     </modules>
 
     <properties>

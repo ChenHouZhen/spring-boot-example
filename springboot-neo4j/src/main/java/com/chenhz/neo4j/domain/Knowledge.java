@@ -40,6 +40,9 @@ public class Knowledge {
     @DateLong
     private Date createTime;
 
+    @JsonIgnore
+    private String name;
+
 
     private Long updateTime;
 

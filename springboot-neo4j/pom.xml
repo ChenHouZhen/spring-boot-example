@@ -49,6 +49,22 @@
             <systemPath>${project.lib.path}/org.xmind.core_3.7.6.201801311814.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>org.xmind</groupId>
+            <artifactId>org.xmind.ui.mindmap</artifactId>
+            <version>3.7.6</version>
+            <scope>system</scope>
+            <systemPath>${project.lib.path}/org.xmind.ui.mindmap_3.7.6.201801311814.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.xmind</groupId>
+            <artifactId>org.xmind.ui</artifactId>
+            <version>3.7.6</version>
+            <scope>system</scope>
+            <systemPath>${project.lib.path}/org.xmind.ui_3.7.6.201801311814.jar</systemPath>
+        </dependency>
+
        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-neo4j</artifactId>
