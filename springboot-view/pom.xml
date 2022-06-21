@@ -14,7 +14,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <mysql.version>5.1.38</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <druid.version>1.0.28</druid.version>
         <velocity.version>1.7</velocity.version>
         <mybatis.typehandlers.jsr.version>1.0.2</mybatis.typehandlers.jsr.version>
