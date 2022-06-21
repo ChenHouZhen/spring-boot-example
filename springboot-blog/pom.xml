@@ -17,7 +17,7 @@
 
 	<properties>
         <kaptcha.version>0.0.9</kaptcha.version>
-		<mysql.version>5.1.38</mysql.version>
+		<mysql.version>8.0.28</mysql.version>
 		<druid.version>1.0.28</druid.version>
 		<mybatis.typehandlers.jsr.version>1.0.2</mybatis.typehandlers.jsr.version>
 		<mybatisplus.version>2.1.9</mybatisplus.version>
